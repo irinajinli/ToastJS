@@ -11,7 +11,8 @@ const button4 = document.querySelector("#button4");
 // event listeners for buttons
 button1.addEventListener("click", makePopup1);
 button2.addEventListener("click", makePopup2);
-// button3.addEventListener("click", makePopup3);
+button3.addEventListener("mouseover", makePopup3);
+button3.addEventListener("mouseleave", removePopup3);
 // button4.addEventListener("click", makePopup4);
 
 function makePopup1(e) {
@@ -23,4 +24,16 @@ function makePopup2(e) {
   e.preventDefault();
   const popup = popupGen.makeBoxPopup(e, "this is a box popup");
   popupGen.addCloseButton(popup);
+}
+
+function makePopup3(e) {
+  e.preventDefault();
+  const popup = popupGen.makeBoxPopup(e, "this is a box popup");
+  popup.id = "mouseOverPopup";
+}
+
+function removePopup3(e) {
+  e.preventDefault();
+  const toRemove = document.querySelector("#mouseOverPopup");
+  toRemove.remove();
 }

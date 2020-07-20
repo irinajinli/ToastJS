@@ -38,21 +38,12 @@ PopupGenerator.prototype = {
     popup.style.top = y + "px";
     popup.appendChild(document.createTextNode(contents));
 
-    // create close button
-    // const closeButton = document.createElement("button");
-    // closeButton.innerHTML = "close";
-    // closeButton.addEventListener("click", function () {
-    //   closeButton.parentElement.remove();
-    // });
-
-    // popup.appendChild(closeButton);
-
     event.currentTarget.parentElement.appendChild(popup);
 
     return popup;
   },
 
-  addCloseButton(popup) {
+  addCloseButton: function (popup) {
     const closeButton = document.createElement("button");
     closeButton.innerHTML = "close";
     closeButton.addEventListener("click", function () {
