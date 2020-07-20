@@ -10,9 +10,16 @@ const button4 = document.querySelector("#button4");
 
 // event listeners for buttons
 button1.addEventListener("click", makePopup1);
+button2.addEventListener("click", makePopup2);
+// button3.addEventListener("click", makePopup3);
+// button4.addEventListener("click", makePopup4);
 
 function makePopup1(e) {
-  log("button1 clicked");
   e.preventDefault();
-  popupGen.makePopup(button1.parentElement);
+  popupGen.makeTextPopup(e, "this is a simple text popup");
+}
+
+function makePopup2(e) {
+  e.preventDefault();
+  popupGen.makeBoxPopup(e, "this is a box popup");
 }
