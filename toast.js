@@ -18,6 +18,8 @@ PopupGenerator.prototype = {
     popup.style.top = y + "px";
     popup.appendChild(document.createTextNode(contents));
     event.currentTarget.parentElement.appendChild(popup);
+
+    return popup;
   },
 
   makeBoxPopup: function (event, contents) {
@@ -37,6 +39,20 @@ PopupGenerator.prototype = {
     popup.appendChild(document.createTextNode(contents));
 
     // create close button
+    // const closeButton = document.createElement("button");
+    // closeButton.innerHTML = "close";
+    // closeButton.addEventListener("click", function () {
+    //   closeButton.parentElement.remove();
+    // });
+
+    // popup.appendChild(closeButton);
+
+    event.currentTarget.parentElement.appendChild(popup);
+
+    return popup;
+  },
+
+  addCloseButton(popup) {
     const closeButton = document.createElement("button");
     closeButton.innerHTML = "close";
     closeButton.addEventListener("click", function () {
@@ -44,7 +60,5 @@ PopupGenerator.prototype = {
     });
 
     popup.appendChild(closeButton);
-
-    event.currentTarget.parentElement.appendChild(popup);
   },
 };

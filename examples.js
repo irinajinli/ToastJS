@@ -16,10 +16,11 @@ button2.addEventListener("click", makePopup2);
 
 function makePopup1(e) {
   e.preventDefault();
-  popupGen.makeTextPopup(e, "this is a simple text popup");
+  const popup = popupGen.makeTextPopup(e, "this is a simple text popup");
 }
 
 function makePopup2(e) {
   e.preventDefault();
-  popupGen.makeBoxPopup(e, "this is a box popup");
+  const popup = popupGen.makeBoxPopup(e, "this is a box popup");
+  popupGen.addCloseButton(popup);
 }
