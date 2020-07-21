@@ -49,11 +49,18 @@ PopupGenerator.prototype = {
     popup.style.left = x + "px";
     popup.style.top = y + "px";
     popup.style.border = "1px solid " + borderColor;
+    popup.style.borderRadius = "5px";
     popup.appendChild(document.createTextNode(contents));
 
     event.currentTarget.parentElement.appendChild(popup);
 
     return popup;
+  },
+
+  addTimer: function (ms, popup) {
+    setTimeout(function () {
+      popup.remove();
+    }, ms);
   },
 
   changeTextColor: function (popup, color) {
