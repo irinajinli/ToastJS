@@ -8,27 +8,27 @@ const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const button4 = document.querySelector("#button4");
 
-// event listeners for buttons
-button1.addEventListener("click", makePopup1);
-button2.addEventListener("click", makePopup2);
-button3.addEventListener("mouseover", makePopup3);
-button3.addEventListener("mouseleave", removePopup3);
-// button4.addEventListener("click", makePopup4);
-
-function makePopup1(e) {
+function popupFunc1(e) {
   e.preventDefault();
-  const popup = popupGen.makeTextPopup(e, "this is a simple text popup");
+  popupGen.makeTextPopup(e, "this is a simple click popup");
 }
 
-function makePopup2(e) {
+popupGen.triggerByClick(button1, popupFunc1);
+
+function popupFunc2(e) {
   e.preventDefault();
-  const popup = popupGen.makeBoxPopup(e, "this is a box popup");
+  const popup = popupGen.makeBoxPopup(e, "this is a box popup", "#212F3D");
+  popupGen.changeBackgroundColor(popup, "#212F3D");
+  popupGen.changeTextColor(popup, "white");
   popupGen.addCloseButton(popup);
 }
 
+popupGen.triggerByClick(button2, popupFunc2);
+
 function makePopup3(e) {
   e.preventDefault();
-  const popup = popupGen.makeBoxPopup(e, "this is a box popup");
+  const popup = popupGen.makeBoxPopup(e, "this is a hover popup");
+  // give popup a name so it's easily removable
   popup.id = "mouseOverPopup";
 }
 
@@ -37,3 +37,6 @@ function removePopup3(e) {
   const toRemove = document.querySelector("#mouseOverPopup");
   toRemove.remove();
 }
+
+popupGen.triggerByMouseover(button3, makePopup3);
+popupGen.closeByMouseleave(button3, removePopup3);
