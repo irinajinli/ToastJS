@@ -57,6 +57,31 @@ PopupGenerator.prototype = {
     return popup;
   },
 
+  makeImportantPopup: function (contents, color, base) {
+    // create element to "grey out" background
+    const greyOut = document.createElement("div");
+    greyOut.innerHTML = "hello";
+    greyOut.style.position = "relative";
+    greyOut.style.opacity = "80%";
+    greyOut.style.zIndex = 0;
+    greyOut.style.backgroundColor = "#424949";
+    greyOut.style.height = "100vh";
+    greyOut.style.width = "100%";
+    base.appendChild(greyOut);
+
+    // create centered popup
+    const popup = document.createElement("div");
+    popup.style =
+      "zIndex: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); border: 1px solid black; padding: 20px";
+    popup.style.backgroundColor = color;
+    popup.style.borderRadius = "5px";
+    popup.appendChild(document.createTextNode(contents));
+
+    base.appendChild(popup);
+
+    return [popup, greyOut];
+  },
+
   addTimer: function (ms, popup) {
     setTimeout(function () {
       popup.remove();
@@ -77,6 +102,18 @@ PopupGenerator.prototype = {
     closeButton.style = "margin: 8px";
     closeButton.addEventListener("click", function () {
       closeButton.parentElement.remove();
+    });
+
+    popup.appendChild(closeButton);
+  },
+
+  addCloseImportantButton: function (popup, greyOut) {
+    const closeButton = document.createElement("button");
+    closeButton.innerHTML = "close";
+    closeButton.style = "margin: 8px";
+    closeButton.addEventListener("click", function () {
+      popup.remove();
+      greyOut.remove();
     });
 
     popup.appendChild(closeButton);
