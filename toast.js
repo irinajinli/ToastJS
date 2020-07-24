@@ -40,7 +40,8 @@ PopupGenerator.prototype = {
       window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
 
     const popup = document.createElement("div");
-    popup.style = "z-index: 2; position: absolute;";
+    // popup.style = "z-index: 2; position: absolute;";
+    popup.className = "textPopup";
     popup.style.left = x + "px";
     popup.style.top = y + "px";
     popup.appendChild(document.createTextNode(contents));
@@ -59,12 +60,12 @@ PopupGenerator.prototype = {
     const targetParent = event.currentTarget.parentElement;
 
     const popup = document.createElement("div");
-    popup.style =
-      "z-index: 2; position: absolute; border: 1px solid black; padding: 20px";
+
+    // default style
+    popup.className = "boxPopup";
     popup.style.left = x + "px";
     popup.style.top = y + "px";
     popup.style.border = "1px solid " + borderColor;
-    popup.style.borderRadius = "5px";
     popup.appendChild(document.createTextNode(contents));
 
     event.currentTarget.parentElement.appendChild(popup);
@@ -75,21 +76,13 @@ PopupGenerator.prototype = {
   makeImportantPopup: function (contents, color, base) {
     // create element to "grey out" background
     const greyOut = document.createElement("div");
-    greyOut.innerHTML = "hello";
-    greyOut.style.position = "relative";
-    greyOut.style.opacity = "80%";
-    greyOut.style.zIndex = 0;
-    greyOut.style.backgroundColor = "#424949";
-    greyOut.style.height = "100vh";
-    greyOut.style.width = "100%";
+    greyOut.className = "greyOut";
     base.appendChild(greyOut);
 
     // create centered popup
     const popup = document.createElement("div");
-    popup.style =
-      "zIndex: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); border: 1px solid black; padding: 20px";
+    popup.className = "importantPopup";
     popup.style.backgroundColor = color;
-    popup.style.borderRadius = "5px";
     popup.appendChild(document.createTextNode(contents));
 
     base.appendChild(popup);
@@ -114,7 +107,7 @@ PopupGenerator.prototype = {
   addCloseButton: function (popup) {
     const closeButton = document.createElement("button");
     closeButton.innerHTML = "close";
-    closeButton.style = "margin: 8px";
+    closeButton.className = "closeButton";
     closeButton.addEventListener("click", function () {
       closeButton.parentElement.remove();
     });
@@ -125,7 +118,7 @@ PopupGenerator.prototype = {
   addCloseImportantButton: function (popup, greyOut) {
     const closeButton = document.createElement("button");
     closeButton.innerHTML = "close";
-    closeButton.style = "margin: 8px";
+    closeButton.className = "closeButton";
     closeButton.addEventListener("click", function () {
       popup.remove();
       greyOut.remove();
