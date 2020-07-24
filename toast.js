@@ -6,6 +6,21 @@ function PopupGenerator() {
 }
 
 PopupGenerator.prototype = {
+  // some basic popup formats are included
+  makePopupFunc: function (type, contents, colour) {
+    const popupFunc = function (e) {
+      e.preventDefault();
+
+      if (type == "text") {
+        popupGen.makeTextPopup(e, contents);
+      } else if (type == "box") {
+        popupGen.makeBoxPopup(e, contents, colour);
+      }
+    };
+
+    return popupFunc;
+  },
+
   triggerByClick: function (element, popupFunc) {
     element.addEventListener("click", popupFunc);
   },

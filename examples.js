@@ -6,18 +6,32 @@ const popupGen = new PopupGenerator();
 const base = document.querySelector("#base");
 const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
+const buttonStyledBox = document.querySelector("#buttonStyledBox");
 const button3 = document.querySelector("#button3");
 const button4 = document.querySelector("#button4");
 const button5 = document.querySelector("#button5");
+const buttonTranslucentPopup = document.querySelector(
+  "#buttonTranslucentPopup"
+);
 
-function makePopup1(e) {
-  e.preventDefault();
-  popupGen.makeTextPopup(e, "this is a permanent click popup");
-}
+// first, some basic built-in popups
+const makePopup1 = popupGen.makePopupFunc(
+  "text",
+  "this is a basic click popup"
+);
 
 popupGen.triggerByClick(button1, makePopup1);
 
-function makePopup2(e) {
+const makePopup2 = popupGen.makePopupFunc(
+  "box",
+  "this is a basic box popup",
+  "#212F3D"
+);
+
+popupGen.triggerByClick(button2, makePopup2);
+
+// custom-styled popups
+function makePopupStyledBox(e) {
   e.preventDefault();
   const popup = popupGen.makeBoxPopup(
     e,
@@ -31,7 +45,7 @@ function makePopup2(e) {
   popupGen.addCloseButton(popup);
 }
 
-popupGen.triggerByClick(button2, makePopup2);
+popupGen.triggerByClick(buttonStyledBox, makePopupStyledBox);
 
 function makePopup3(e) {
   e.preventDefault();
@@ -57,7 +71,7 @@ function makePopup4(e) {
   e.preventDefault();
   const popup = popupGen.makeBoxPopup(
     e,
-    "this is a disappearing popup",
+    "this popup disappears after 2 seconds",
     "#7FB3D5"
   );
 
@@ -84,3 +98,21 @@ function makePopup5(e) {
 }
 
 popupGen.triggerByClick(button5, makePopup5);
+
+function makeTranslucentPopup(e) {
+  e.preventDefault();
+  // make background popup for demo purposes
+  const textPopup = popupGen.makeTextPopup(e, "translucency demo");
+  popupGen.changeTextColor(textPopup, "red");
+
+  const translucentPopup = popupGen.makeBoxPopup(
+    e,
+    "this is a translucent popup",
+    "#212F3D"
+  );
+
+  popupGen.changeBackgroundColor(translucentPopup, "rgba(29, 29, 22, 0.70)");
+  popupGen.changeTextColor(translucentPopup, "white");
+}
+
+popupGen.triggerByClick(buttonTranslucentPopup, makeTranslucentPopup);
