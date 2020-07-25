@@ -5,10 +5,12 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.static(__dirname + "/pub"));
+// static js directory
+app.use("/pub", express.static(path.join(__dirname, "/pub")));
 
-app.get("/", function (req, res) {
-  res.send("Hello World!");
+// route for root
+app.get("/", (req, res) => {
+  res.send("Welcome to ToastJS.");
 });
 
 const port = process.env.PORT || 5000;
