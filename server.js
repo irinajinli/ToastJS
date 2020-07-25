@@ -6,10 +6,9 @@ const express = require("express");
 const app = express();
 
 // static js directory
-app.use("/pub", express.static(path.join(__dirname, "/pub")));
+app.use(express.static(__dirname + "/pub"));
 
-// route for root
-app.get("/", (req, res) => {
+app.get("/", function (req, res) {
   res.send("Welcome to ToastJS.");
 });
 
