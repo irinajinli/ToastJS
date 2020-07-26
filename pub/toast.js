@@ -6,34 +6,79 @@ function PopupGenerator() {
 }
 
 class Popup {
-  constructor(event, layout, contents, openTrigger, closeTrigger) {
-    this.event = event;
+  constructor(layout, contents, openTrigger, closeTrigger) {
     this.layout = layout;
     this.contents = contents;
     this.openTrigger = openTrigger;
     this.closeTrigger = closeTrigger;
+    this.domElement = null;
   }
 
-  displayPopup(self) {
-    debugger;
+  addOpenTrigger(element) {
+    const self = this;
+    element.addEventListener(self.openTrigger, self.displayPopup(element));
+  }
+
+  addCloseTrigger(element, toClose) {
+    const self = this;
+    try {
+      element.addEventListener(self.closeTrigger, self.domElement.remove());
+    } catch {
+      log("error");
+    }
+  }
+
+  displayPopup(element) {
+    const self = this;
+    switch (self.layout) {
+      case "text":
+        return self.displayTextPopup();
+      case "box":
+        return self.displayBoxPopup();
+    }
+  }
+
+  displayTextPopup() {
+    const self = this;
     return function (event) {
-      if (self.layout === "text") {
-        // find coordinates of event's target element
-        const x =
-          window.scrollX + event.currentTarget.getBoundingClientRect().left;
-        const y =
-          window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
+      // find coordinates of event's target element
+      const x =
+        window.scrollX + event.currentTarget.getBoundingClientRect().left;
+      const y =
+        window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
 
-        const popup = document.createElement("div");
-        // popup.style = "z-index: 2; position: absolute;";
-        popup.className = "textPopup";
-        popup.style.left = x + "px";
-        popup.style.top = y + "px";
-        popup.appendChild(document.createTextNode(self.contents));
-        event.currentTarget.parentElement.appendChild(popup);
+      const popup = document.createElement("div");
+      // popup.style = "z-index: 2; position: absolute;";
+      popup.className = "textPopup";
+      popup.style.left = x + "px";
+      popup.style.top = y + "px";
+      popup.appendChild(document.createTextNode(self.contents));
+      event.currentTarget.parentElement.appendChild(popup);
 
-        return popup;
-      }
+      return popup;
+    };
+  }
+
+  displayBoxPopup() {
+    const self = this;
+    return function (event) {
+      // find coordinates of event's target element
+      const x =
+        window.scrollX + event.currentTarget.getBoundingClientRect().left;
+      const y =
+        window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
+
+      const popup = document.createElement("div");
+
+      // default style
+      popup.className = "boxPopup";
+      popup.style.left = x + "px";
+      popup.style.top = y + "px";
+      popup.appendChild(document.createTextNode(self.contents));
+
+      event.currentTarget.parentElement.appendChild(popup);
+
+      return popup;
     };
   }
 }
