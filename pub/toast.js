@@ -5,7 +5,54 @@ function PopupGenerator() {
   this.popups = [];
 }
 
+class Popup {
+  constructor(event, layout, contents, openTrigger, closeTrigger) {
+    this.event = event;
+    this.layout = layout;
+    this.contents = contents;
+    this.openTrigger = openTrigger;
+    this.closeTrigger = closeTrigger;
+  }
+
+  displayPopup(self) {
+    debugger;
+    return function (event) {
+      if (self.layout === "text") {
+        // find coordinates of event's target element
+        const x =
+          window.scrollX + event.currentTarget.getBoundingClientRect().left;
+        const y =
+          window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
+
+        const popup = document.createElement("div");
+        // popup.style = "z-index: 2; position: absolute;";
+        popup.className = "textPopup";
+        popup.style.left = x + "px";
+        popup.style.top = y + "px";
+        popup.appendChild(document.createTextNode(self.contents));
+        event.currentTarget.parentElement.appendChild(popup);
+
+        return popup;
+      }
+    };
+  }
+}
+
 PopupGenerator.prototype = {
+  // new
+  makePopup: function (layout, openTrigger, closeTrigger) {
+    const popup = new Popup(layout, openTrigger, closeTrigger);
+    return popup;
+  },
+
+  newMakePopupFunc: function (popup) {
+    const popupFunc = function (e) {
+      e.preventDefault();
+
+      popup.displayPopup();
+    };
+  },
+
   // some basic popup formats are included
   makePopupFunc: function (type, contents, colour) {
     const popupFunc = function (e) {

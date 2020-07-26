@@ -13,6 +13,12 @@ const button5 = document.querySelector("#button5");
 const buttonTranslucentPopup = document.querySelector(
   "#buttonTranslucentPopup"
 );
+const testButton = document.querySelector("#testButton");
+
+// TEST
+const testPopup = new Popup(event, "text", "hello", null, null);
+debugger;
+testButton.addEventListener("click", testPopup.displayPopup(testPopup));
 
 // first, some basic built-in popups
 const makePopup1 = popupGen.makePopupFunc(
