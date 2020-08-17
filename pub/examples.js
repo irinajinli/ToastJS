@@ -14,6 +14,7 @@ const closeableButton = document.querySelector("#closeableButton");
 const hoverButton = document.querySelector("#hoverButton");
 const timedButton = document.querySelector("#timedButton");
 const importantButton = document.querySelector("#importantButton");
+const cssButton = document.querySelector("#cssButton");
 
 // first, some basic built-in popups
 const textPopup = new Popup(
@@ -72,3 +73,13 @@ const importantPopup = new Popup(
   "close button"
 );
 importantPopup.addOpenTrigger(importantButton);
+
+const cssPopup = new Popup(
+  base,
+  "box",
+  "This is a custom-styled popup.",
+  "mouseover",
+  "mouseleave",
+  "customCss"
+);
+cssPopup.addOpenTrigger(cssButton);

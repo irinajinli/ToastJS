@@ -44,3 +44,10 @@ div {
 .closeButton {
   margin: 8px;
 }
+
+.customCss {
+  background-color: blueviolet;
+  border-radius: 40px;
+  line-height: 100px;
+  height: 100px;
+}

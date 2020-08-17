@@ -2,12 +2,13 @@
 const log = console.log;
 
 class Popup {
-  constructor(base, layout, contents, openTrigger, closeTrigger, ms) {
+  constructor(base, layout, contents, openTrigger, closeTrigger, cssStyle, ms) {
     this.base = base;
     this.layout = layout;
     this.contents = contents;
     this.openTrigger = openTrigger;
     this.closeTrigger = closeTrigger;
+    this.cssStyle = cssStyle; // optional; for providing custom css style
     this.ms = ms; // optional; only for when closeTrigger is time
   }
 
@@ -40,6 +41,10 @@ class Popup {
       const popup = document.createElement("div");
       // popup.style = "z-index: 2; position: absolute;";
       popup.className = "textPopup";
+
+      // custom style
+      popup.classList.add(self.cssStyle);
+
       popup.style.left = x + "px";
       popup.style.top = y + "px";
       popup.appendChild(document.createTextNode(self.contents));
@@ -81,6 +86,10 @@ class Popup {
 
       // default style
       popup.className = "boxPopup";
+
+      // custom style
+      popup.classList.add(self.cssStyle);
+
       popup.style.left = x + "px";
       popup.style.top = y + "px";
       popup.appendChild(document.createTextNode(self.contents));
@@ -123,6 +132,10 @@ class Popup {
       const popup = document.createElement("div");
       popup.className = "importantPopup";
       popup.style.backgroundColor = "white";
+
+      // custom style
+      popup.classList.add(self.cssStyle);
+
       popup.appendChild(document.createTextNode(self.contents));
 
       if (self.closeTrigger === "mouseleave") {
