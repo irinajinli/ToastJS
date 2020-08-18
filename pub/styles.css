@@ -4,6 +4,10 @@ body {
 
 div {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  /* animation-name: disappearTop;
+  animation-duration: 2s;
+  animation-iteration-count: 1; */
+  /* animation-fill-mode: forwards; */
 }
 
 .textPopup {
@@ -50,4 +54,12 @@ div {
   border-radius: 40px;
   line-height: 100px;
   height: 100px;
+}
+
+@keyframes disappearTop {
+  from {
+  }
+  to {
+    top: 0px;
+  }
 }

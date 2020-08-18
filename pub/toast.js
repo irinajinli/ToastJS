@@ -10,6 +10,9 @@ class Popup {
     this.closeTrigger = closeTrigger;
     this.cssStyle = cssStyle; // optional; for providing custom css style
     this.ms = ms; // optional; only for when closeTrigger is time
+    this.animationName = null;
+    this.animationDuration = null;
+    this.animationIterations = null;
   }
 
   addOpenTrigger(element) {
@@ -47,6 +50,12 @@ class Popup {
 
       popup.style.left = x + "px";
       popup.style.top = y + "px";
+
+      // check for animation
+      if (self.animationName !== null) {
+        self.setAnimation(popup);
+      }
+
       popup.appendChild(document.createTextNode(self.contents));
       event.currentTarget.parentElement.appendChild(popup);
 
@@ -92,6 +101,12 @@ class Popup {
 
       popup.style.left = x + "px";
       popup.style.top = y + "px";
+
+      // check for animation
+      if (self.animationName !== null) {
+        self.setAnimation(popup);
+      }
+
       popup.appendChild(document.createTextNode(self.contents));
 
       event.currentTarget.parentElement.appendChild(popup);
@@ -136,6 +151,11 @@ class Popup {
       // custom style
       popup.classList.add(self.cssStyle);
 
+      // check for animation
+      if (self.animationName !== null) {
+        self.setAnimation(popup);
+      }
+
       popup.appendChild(document.createTextNode(self.contents));
 
       if (self.closeTrigger === "mouseleave") {
@@ -163,5 +183,20 @@ class Popup {
 
       base.appendChild(popup);
     };
+  }
+
+  addAnimation(name, duration, iterations) {
+    const self = this;
+    self.animationName = name;
+    self.animationDuration = duration;
+    self.animationIterations = iterations;
+  }
+
+  setAnimation(popup) {
+    const self = this;
+    popup.style.animationName = self.animationName;
+    popup.style.animationDuration = self.animationDuration;
+    popup.style.animationIterations = self.animationIterations;
+    popup.style.animationFillMode = "forwards";
   }
 }

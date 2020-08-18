@@ -15,6 +15,7 @@ const hoverButton = document.querySelector("#hoverButton");
 const timedButton = document.querySelector("#timedButton");
 const importantButton = document.querySelector("#importantButton");
 const cssButton = document.querySelector("#cssButton");
+const animationButton = document.querySelector("#animationButton");
 
 // first, some basic built-in popups
 const textPopup = new Popup(
@@ -83,3 +84,13 @@ const cssPopup = new Popup(
   "customCss"
 );
 cssPopup.addOpenTrigger(cssButton);
+
+const animationPopup = new Popup(
+  base,
+  "box",
+  "This is a default close-button popup.",
+  "click",
+  "close button"
+);
+animationPopup.addAnimation("disappearTop", "1s", "1");
+animationPopup.addOpenTrigger(animationButton);
