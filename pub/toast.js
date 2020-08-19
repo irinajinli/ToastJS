@@ -13,6 +13,7 @@ class Popup {
     this.animationName = null;
     this.animationDuration = null;
     this.animationIterations = null;
+    this.soundPath = null;
   }
 
   addOpenTrigger(element) {
@@ -54,6 +55,13 @@ class Popup {
       // check for animation
       if (self.animationName !== null) {
         self.setAnimation(popup);
+      }
+
+      debugger;
+      // check for sound
+      if (self.soundPath !== null) {
+        playSound();
+        debugger;
       }
 
       popup.appendChild(document.createTextNode(self.contents));
@@ -105,6 +113,11 @@ class Popup {
       // check for animation
       if (self.animationName !== null) {
         self.setAnimation(popup);
+      }
+
+      // check for sound
+      if (self.soundPath !== null) {
+        self.playSound();
       }
 
       popup.appendChild(document.createTextNode(self.contents));
@@ -198,5 +211,14 @@ class Popup {
     popup.style.animationDuration = self.animationDuration;
     popup.style.animationIterations = self.animationIterations;
     popup.style.animationFillMode = "forwards";
+  }
+
+  addSound(path) {
+    this.soundPath = path;
+  }
+
+  playSound() {
+    const audio = new Audio(this.soundPath);
+    audio.play();
   }
 }
