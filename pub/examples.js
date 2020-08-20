@@ -18,6 +18,7 @@ const cssButton = document.querySelector("#cssButton");
 const animationButton = document.querySelector("#animationButton");
 const soundButton = document.querySelector("#soundButton");
 const customParentButton = document.querySelector("#customParentButton");
+const collateralButon = document.querySelector("#collateralButon");
 
 // first, some basic built-in popups
 const textPopup = new Popup(
@@ -94,7 +95,7 @@ const animationPopup = new Popup(
   "click",
   "close button"
 );
-animationPopup.addAnimation("disappearTop", "1s", "1");
+animationPopup.addAnimation("toTop", "1s", "1");
 animationPopup.addOpenTrigger(animationButton);
 
 const soundPopup = new Popup(
@@ -117,3 +118,19 @@ const customParentPopup = new Popup(
 const customParent = document.querySelector("#customParent");
 customParentPopup.setParentElement(customParent);
 customParentPopup.addOpenTrigger(customParentButton);
+
+const collateralPopup = new Popup(
+  base,
+  "text",
+  "This popup affects other elements.",
+  "click",
+  "close button",
+  "left"
+);
+collateralPopup.addAnimation("toRight", "1s", "1");
+const collateralElements = [document.querySelector("#customParent")];
+collateralPopup.setCollateral(collateralElements);
+console.log(collateralPopup);
+collateralPopup.setCollateralAnimation("toRight", "1s", "1");
+console.log(collateralPopup);
+collateralPopup.addOpenTrigger(collateralButon);

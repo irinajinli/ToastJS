@@ -18,11 +18,43 @@
       this.closeTrigger = closeTrigger;
       this.cssStyle = cssStyle; // optional; for providing custom css style
       this.ms = ms; // optional; only for when closeTrigger is time
+
+      // the following fields are all optional and can be set with methods below
       this.animationName = null;
       this.animationDuration = null;
       this.animationIterations = null;
-      this.soundPath = null;
-      this.parentElement = null;
+      this.soundPath = null; // to play sound effect when popup appears
+      this.parentElement = null; // if null, popup will be appended to event target's parent
+      this.collateral = null; // an array of other elements to move when the popup appears
+      this.collateralAnimationName = null; // how to animate the other affected elements
+      this.collateralAnimationDuration = null;
+      this.collateralAnimationIterations = null;
+    }
+
+    setCollateral(arrayOfCollateralElements) {
+      this.collateral = arrayOfCollateralElements;
+    }
+
+    setCollateralAnimation(name, duration, iterations) {
+      this.collateralAnimationName = name;
+      this.collateralAnimationDuration = duration;
+      this.collateralAnimationIterations = iterations;
+    }
+
+    animateCollateral() {
+      for (let i = 0; i < this.collateral.length; i++) {
+        const currElement = this.collateral[i];
+
+        currElement.style.animationName = this.collateralAnimationName;
+        currElement.style.animationDuration = this.collateralAnimationDuration;
+        currElement.style.animationIterations = this.collateralAnimationIterations;
+        currElement.style.animationFillMode = "forwards";
+        console.log(
+          this.collateralAnimationName,
+          this.collateralAnimationDuration,
+          this.collateralAnimationIterations
+        );
+      }
     }
 
     addOpenTrigger(element) {
@@ -60,12 +92,6 @@
     displayTextPopup(element) {
       const self = this;
       return function (event) {
-        // find coordinates of event's target element
-        // const x =
-        //   window.scrollX + event.currentTarget.getBoundingClientRect().left;
-        // const y =
-        //   window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
-
         const popup = document.createElement("div");
         // popup.style = "z-index: 2; position: absolute;";
         popup.className = "textPopup";
@@ -73,12 +99,14 @@
         // custom style
         popup.classList.add(self.cssStyle);
 
-        // popup.style.left = x + "px";
-        // popup.style.top = y + "px";
-
         // check for animation
         if (self.animationName !== null) {
-          self.setAnimation(popup);
+          self.animate(popup);
+        }
+
+        // check for collateral animation
+        if (self.collateral !== null) {
+          self.animateCollateral();
         }
 
         // check for sound
@@ -139,7 +167,12 @@
 
         // check for animation
         if (self.animationName !== null) {
-          self.setAnimation(popup);
+          self.animate(popup);
+        }
+
+        // check for collateral animation
+        if (self.collateral !== null) {
+          self.animateCollateral();
         }
 
         // check for sound
@@ -193,7 +226,17 @@
 
         // check for animation
         if (self.animationName !== null) {
-          self.setAnimation(popup);
+          self.animate(popup);
+        }
+
+        // check for collateral animation
+        if (self.collateral !== null) {
+          self.animateCollateral();
+        }
+
+        // check for sound
+        if (self.soundPath !== null) {
+          playSound();
         }
 
         popup.appendChild(document.createTextNode(self.contents));
@@ -232,7 +275,7 @@
       self.animationIterations = iterations;
     }
 
-    setAnimation(popup) {
+    animate(popup) {
       const self = this;
       popup.style.animationName = self.animationName;
       popup.style.animationDuration = self.animationDuration;

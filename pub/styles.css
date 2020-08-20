@@ -56,10 +56,23 @@ div {
   height: 100px;
 }
 
-@keyframes disappearTop {
+.left {
+  position: absolute;
+  left: 0px;
+}
+
+@keyframes toTop {
   from {
   }
   to {
     top: 0px;
+  }
+}
+
+@keyframes toRight {
+  from {
+  }
+  to {
+    left: 70vw;
   }
 }
