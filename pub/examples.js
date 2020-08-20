@@ -17,6 +17,7 @@ const importantButton = document.querySelector("#importantButton");
 const cssButton = document.querySelector("#cssButton");
 const animationButton = document.querySelector("#animationButton");
 const soundButton = document.querySelector("#soundButton");
+const customParentButton = document.querySelector("#customParentButton");
 
 // first, some basic built-in popups
 const textPopup = new Popup(
@@ -105,3 +106,14 @@ const soundPopup = new Popup(
 );
 soundPopup.addOpenTrigger(soundButton);
 soundPopup.addSound("./resources/botw_get.mp3");
+
+const customParentPopup = new Popup(
+  base,
+  "text",
+  "This popup has a custom parent.",
+  "click",
+  "close button"
+);
+const customParent = document.querySelector("#customParent");
+customParentPopup.setParentElement(customParent);
+customParentPopup.addOpenTrigger(customParentButton);

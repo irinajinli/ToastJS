@@ -22,6 +22,7 @@
       this.animationDuration = null;
       this.animationIterations = null;
       this.soundPath = null;
+      this.parentElement = null;
     }
 
     addOpenTrigger(element) {
@@ -41,14 +42,29 @@
       }
     }
 
+    appendToEventTarget(target, popup) {
+      // by default, makes the popup slightly below the target
+      const x = window.scrollX + target.getBoundingClientRect().left;
+      const y = window.scrollY + target.getBoundingClientRect().top + 50;
+
+      popup.style.left = x + "px";
+      popup.style.top = y + "px";
+
+      target.parentElement.appendChild(popup);
+    }
+
+    setParentElement(parent) {
+      this.parentElement = parent;
+    }
+
     displayTextPopup(element) {
       const self = this;
       return function (event) {
         // find coordinates of event's target element
-        const x =
-          window.scrollX + event.currentTarget.getBoundingClientRect().left;
-        const y =
-          window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
+        // const x =
+        //   window.scrollX + event.currentTarget.getBoundingClientRect().left;
+        // const y =
+        //   window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
 
         const popup = document.createElement("div");
         // popup.style = "z-index: 2; position: absolute;";
@@ -57,23 +73,26 @@
         // custom style
         popup.classList.add(self.cssStyle);
 
-        popup.style.left = x + "px";
-        popup.style.top = y + "px";
+        // popup.style.left = x + "px";
+        // popup.style.top = y + "px";
 
         // check for animation
         if (self.animationName !== null) {
           self.setAnimation(popup);
         }
 
-        debugger;
         // check for sound
         if (self.soundPath !== null) {
           playSound();
-          debugger;
         }
 
         popup.appendChild(document.createTextNode(self.contents));
-        event.currentTarget.parentElement.appendChild(popup);
+
+        if (self.parentElement === null) {
+          self.appendToEventTarget(event.currentTarget, popup);
+        } else {
+          self.parentElement.append(popup);
+        }
 
         if (self.closeTrigger === "mouseleave") {
           element.addEventListener(self.closeTrigger, function (e) {
