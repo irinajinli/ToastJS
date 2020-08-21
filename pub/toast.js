@@ -50,22 +50,8 @@
       self.animationDelay = delay;
     }
 
-    animate(popup) {
-      const self = this;
-      popup.style.animationName = self.animationName;
-      popup.style.animationDuration = self.animationDuration;
-      popup.style.animationIterations = self.animationIterations;
-      popup.style.animationDelay = self.animationDelay;
-      popup.style.animationFillMode = "forwards";
-    }
-
     addSound(path) {
       this.soundPath = path;
-    }
-
-    playSound() {
-      const audio = new Audio(this.soundPath);
-      audio.play();
     }
 
     setCollateral(arrayOfCollateralElements) {
@@ -79,18 +65,9 @@
       this.collateralAnimationDelay = delay;
     }
 
-    animateCollateral() {
-      for (let i = 0; i < this.collateral.length; i++) {
-        const currElement = this.collateral[i];
-
-        currElement.style.animationName = this.collateralAnimationName;
-        currElement.style.animationDuration = this.collateralAnimationDuration;
-        currElement.style.animationIterations = this.collateralAnimationIterations;
-        currElement.style.animationDelay = this.collateralAnimationDelay;
-        currElement.style.animationFillMode = "forwards";
-      }
-    }
-
+    // =================================
+    // THE FOLLOWING METHODS ARE PRIVATE
+    // =================================
     displayPopup(element) {
       const self = this;
       switch (self.layout) {
@@ -112,6 +89,32 @@
       popup.style.top = y + "px";
 
       target.parentElement.appendChild(popup);
+    }
+
+    animate(popup) {
+      const self = this;
+      popup.style.animationName = self.animationName;
+      popup.style.animationDuration = self.animationDuration;
+      popup.style.animationIterations = self.animationIterations;
+      popup.style.animationDelay = self.animationDelay;
+      popup.style.animationFillMode = "forwards";
+    }
+
+    animateCollateral() {
+      for (let i = 0; i < this.collateral.length; i++) {
+        const currElement = this.collateral[i];
+
+        currElement.style.animationName = this.collateralAnimationName;
+        currElement.style.animationDuration = this.collateralAnimationDuration;
+        currElement.style.animationIterations = this.collateralAnimationIterations;
+        currElement.style.animationDelay = this.collateralAnimationDelay;
+        currElement.style.animationFillMode = "forwards";
+      }
+    }
+
+    playSound() {
+      const audio = new Audio(this.soundPath);
+      audio.play();
     }
 
     displayTextPopup(element) {

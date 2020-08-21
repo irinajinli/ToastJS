@@ -1,0 +1,146 @@
+xmp {
+  font-size: 18px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+@keyframes toTop {
+  from {
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes toRight {
+  from {
+  }
+  to {
+    left: 70vw;
+  }
+}
+
+@keyframes moveDown {
+  from {
+  }
+  to {
+    position: absolute;
+    top: 500px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.customCss {
+  background-color: blueviolet;
+  border-radius: 40px;
+  line-height: 100px;
+  height: 100px;
+}
+
+.left {
+  position: absolute;
+  left: 0px;
+}
+
+.title1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 2%;
+}
+
+.title2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 2%;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.normal {
+  font-size: 18px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.smallMarginTop {
+  margin-top: 1%;
+}
+
+.marginTop {
+  margin-top: 6%;
+}
+
+.marginBottom {
+  margin-bottom: 6%;
+}
+
+.marginRight {
+  margin-right: 0.5%;
+}
+
+.marginLeft {
+  margin-left: 0.5%;
+}
+
+.example1 {
+  background-color: white;
+  color: black;
+  border-color: white;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image {
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 30%;
+}
+
+.code {
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+.blue {
+  color: rgb(0, 123, 255);
+}
+
+.wide {
+  font-size: 18px;
+  font-weight: normal;
+  width: 70%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.centreText {
+  text-align: center;
+}

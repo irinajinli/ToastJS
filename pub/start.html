@@ -18,22 +18,35 @@
     <link rel="stylesheet" type="text/css" href="docstyles.css" />
 
     <script defer type="text/javascript" src="toast.js"></script>
-    <script defer type="text/javascript" src="example4.js"></script>
+    <script defer type="text/javascript" src="start.js"></script>
   </head>
   <body class="background"></body>
-  <div class="title1 marginTop">Example 4</div>
-  <div class="title2 smallMarginTop">Disappearing Popup with Sound Effect</div>
-    <div class="subtitle smallMarginTop">
-      <button id="sendButton">Click to send message</button>
-    </div>
-    <div class="subtitle smallMarginTop">Code</div>
-    <div class="subtitle smallMarginTop">JS (for one popup)</div>
-    <img src="./resources/soundJS.png" class="image" />
-    <div class="subtitle smallMarginTop">HTML</div>
-    <img src="./resources/soundHTML.png" class="image" />
-    <div class="subtitle smallMarginTop">CSS</div>
-    <img src="./resources/soundCSS.png" class="image" />
+  <div class="title1 marginTop">Documentation</div>
+  <div class="title2 smallMarginTop">Getting Started</div>
+  <div class="normal">Include the following script and link in your HTML file header:</div>
+  <code><xmp>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script defer type="text/javascript" src="toast.js"></script></xmp></code>
 
+  <div class="normal">Select the HTML element you want to trigger the Popup:</div>
+  <code><xmp>
+  const triggerElement = document.querySelector("#triggerElement");</xmp></code>
+
+  <div class="normal">Create a Popup object and add triggerElement as the openTrigger:</div>
+  <code><xmp>
+  const myPopup = new Popup(
+    base,
+    "box",
+    "Here's an example Popup!",
+    "mouseover",
+    "mouseleave"
+  );
+  myPopup.addOpenTrigger(triggerElement);</xmp></code>
+
+  <div class="normal">Result:</div>
+  <div id="triggerElement" class="normal blue marginBottom">Mouse over me!</div>
+
+  
     <!-- Reqs for BootStrap -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

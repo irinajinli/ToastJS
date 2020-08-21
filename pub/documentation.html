@@ -15,18 +15,15 @@
     />
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="docstyles.css" />
 
+    <script defer type="text/javascript" src="toast.js"></script>
     <script defer type="text/javascript" src="documentation.js"></script>
   </head>
   <body class="background"></body>
   <div class="title1 marginTop">Documentation</div>
-  <div class="title2 smallMarginTop">Getting Started</div>
-  <div class="normal">Include the following script and stylesheet in your HTML file header:</div>
-  <code><xmp>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script defer type="text/javascript" src="toast.js"></script></xmp></code>
 
-  <div class="title2 smallMarginTop">API</div>
+  <div class="title2">API</div>
   <div class="subtitle">Constructor</div>
   <div class="normal bold smallMarginTop">Popup([base], layout, contents, openTrigger, [closeTrigger], [cssStyle], [ms])</div>
   <div class="normal">Creates a Popup with the specified properties. closeTrigger, cssStyle, and ms are optional. ms specifies how many seconds the popup should persist, and is only applicable when closeTrigger is "time".</div>
@@ -86,6 +83,27 @@
 
   <div class="normal bold smallMarginTop">collateralAnimationDelay</div>
   <div class="normal">Optional. The delay for the animation for this Popup's collateral elements.</div>
+
+  <div class="subtitle smallMarginTop">Methods</div>
+
+  <div class="normal bold smallMarginTop">addOpenTrigger(element)</div>
+  <div class="normal">Set which HTML element should trigger the Popup when an event (openTrigger) occurs.</div>
+
+  <div class="normal bold smallMarginTop">setParentElement(parent)</div>
+  <div class="normal">Set which HTML element should be the parent element of the Popup element.</div>
+
+  <div class="normal bold smallMarginTop">addAnimation(name, duration, iterations, delay)</div>
+  <div class="normal">Set the animation name, duration, iterations, and delay for the Popup.</div>
+
+  <div class="normal bold smallMarginTop">addSound(path)</div>
+  <div class="normal">Set the path to the sound file that should play when the Popup is triggered.</div>
+
+  <div class="normal bold smallMarginTop">setCollateral(arrayOfCollateralElements)</div>
+  <div class="normal">Set the array of HTML elements which should be animated when the Popup is triggered.</div>
+
+  <div class="normal bold smallMarginTop">setCollateralAnimation(name, duration, iterations, delay)</div>
+  <div class="normal marginBottom">Set the animation name, duration, iterations, and delay for the Popup's collateral elements.</div>
+  
 
     <!-- Reqs for BootStrap -->
     <script
