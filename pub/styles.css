@@ -4,10 +4,17 @@ body {
 
 div {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
   /* animation-name: disappearTop;
   animation-duration: 2s;
   animation-iteration-count: 1; */
   /* animation-fill-mode: forwards; */
+}
+
+xmp {
+  font-size: 18px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .textPopup {
@@ -177,4 +184,8 @@ div {
   font-size: 18px;
   font-weight: normal;
   width: 70%;
+}
+
+.bold {
+  font-weight: bold;
 }

@@ -33,6 +33,41 @@
       this.collateralAnimationDelay = null;
     }
 
+    addOpenTrigger(element) {
+      const self = this;
+      element.addEventListener(self.openTrigger, self.displayPopup(element));
+    }
+
+    setParentElement(parent) {
+      this.parentElement = parent;
+    }
+
+    addAnimation(name, duration, iterations, delay) {
+      const self = this;
+      self.animationName = name;
+      self.animationDuration = duration;
+      self.animationIterations = iterations;
+      self.animationDelay = delay;
+    }
+
+    animate(popup) {
+      const self = this;
+      popup.style.animationName = self.animationName;
+      popup.style.animationDuration = self.animationDuration;
+      popup.style.animationIterations = self.animationIterations;
+      popup.style.animationDelay = self.animationDelay;
+      popup.style.animationFillMode = "forwards";
+    }
+
+    addSound(path) {
+      this.soundPath = path;
+    }
+
+    playSound() {
+      const audio = new Audio(this.soundPath);
+      audio.play();
+    }
+
     setCollateral(arrayOfCollateralElements) {
       this.collateral = arrayOfCollateralElements;
     }
@@ -56,11 +91,6 @@
       }
     }
 
-    addOpenTrigger(element) {
-      const self = this;
-      element.addEventListener(self.openTrigger, self.displayPopup(element));
-    }
-
     displayPopup(element) {
       const self = this;
       switch (self.layout) {
@@ -82,10 +112,6 @@
       popup.style.top = y + "px";
 
       target.parentElement.appendChild(popup);
-    }
-
-    setParentElement(parent) {
-      this.parentElement = parent;
     }
 
     displayTextPopup(element) {
@@ -139,6 +165,11 @@
           setTimeout(function () {
             popup.remove();
           }, self.ms);
+        } else {
+          element.addEventListener(self.closeTrigger, function (e) {
+            e.preventDefault();
+            popup.remove();
+          });
         }
         return popup;
       };
@@ -271,32 +302,6 @@
 
         base.appendChild(popup);
       };
-    }
-
-    addAnimation(name, duration, iterations, delay) {
-      const self = this;
-      self.animationName = name;
-      self.animationDuration = duration;
-      self.animationIterations = iterations;
-      self.animationDelay = delay;
-    }
-
-    animate(popup) {
-      const self = this;
-      popup.style.animationName = self.animationName;
-      popup.style.animationDuration = self.animationDuration;
-      popup.style.animationIterations = self.animationIterations;
-      popup.style.animationDelay = self.animationDelay;
-      popup.style.animationFillMode = "forwards";
-    }
-
-    addSound(path) {
-      this.soundPath = path;
-    }
-
-    playSound() {
-      const audio = new Audio(this.soundPath);
-      audio.play();
     }
   }
 

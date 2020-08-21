@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" id="base">
+  <head>
+    <meta charset="utf-8" />
+    <title>Toast.js</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script defer type="text/javascript" src="documentation.js"></script>
+  </head>
+  <body class="background"></body>
+  <div class="title1 marginTop">Documentation</div>
+  <div class="title2 smallMarginTop">Getting Started</div>
+  <div class="normal">Include the following script and stylesheet in your HTML file header:</div>
+  <code><xmp>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script defer type="text/javascript" src="toast.js"></script></xmp></code>
+
+  <div class="title2 smallMarginTop">API</div>
+  <div class="subtitle">Constructor</div>
+  <div class="normal bold smallMarginTop">Popup([base], layout, contents, openTrigger, [closeTrigger], [cssStyle], [ms])</div>
+  <div class="normal">Creates a Popup with the specified properties. closeTrigger, cssStyle, and ms are optional. ms specifies how many seconds the popup should persist, and is only applicable when closeTrigger is "time".</div>
+
+  <div class="subtitle smallMarginTop">Properties</div>
+
+  <div class="normal bold smallMarginTop">base</div>
+  <div class="normal">Required only for "important" popups (i.e., those that hide the background contents). This is the main body element of the HTML file.</div>
+
+  <div class="normal bold smallMarginTop">layout</div>
+  <div class="normal">Required. The layout of the Popup. Choices: "text", "box", "important".</div>
+    
+  <div class="normal bold smallMarginTop">contents</div>
+  <div class="normal">Optional. String containing the contents of the Popup.</div>
+
+  <div class="normal bold smallMarginTop">openTrigger</div>
+  <div class="normal">Required. What makes the Popup open? Choices: "click", "mouseover", any other valid <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event type</a></div>
+
+  <div class="normal bold smallMarginTop">closeTrigger</div>
+  <div class="normal">Optional. What makes the Popup close? Choices: "time" (automatically closes after specified time), "close button" (closes when close button is clicked), any valid <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event type</a></div>
+
+  <div class="normal bold smallMarginTop">cssStyle</div>
+  <div class="normal">Optional. String containing the name of a CSS style.</div>
+
+  <div class="normal bold smallMarginTop">ms</div>
+  <div class="normal">Required only when closeTrigger is "time". Specifies how many milliseconds the Popup should persist for before disappearing.</div>
+
+  <div class="normal bold smallMarginTop">animationName</div>
+  <div class="normal">Optional. String containing the name of the animation for this Popup.</div>
+
+  <div class="normal bold smallMarginTop">animationDuration</div>
+  <div class="normal">Optional. The duration of the animation for this Popup.</div>
+
+  <div class="normal bold smallMarginTop">animationIterations</div>
+  <div class="normal">Optional. The number of iterations for the animation for this Popup.</div>
+
+  <div class="normal bold smallMarginTop">animationDelay</div>
+  <div class="normal">Optional. The delay for the animation for this Popup.</div>
+
+  <div class="normal bold smallMarginTop">soundPath</div>
+  <div class="normal">Optional. The path to the sound file that plays when this Popup is triggered.</div>
+
+  <div class="normal bold smallMarginTop">parentElement</div>
+  <div class="normal">Optional. The HTML element to append the Popup to. By default, the Popup is a child of the parent of the triggering element.</div>
+
+  <div class="normal bold smallMarginTop">collateral</div>
+  <div class="normal">Optional. An array of HTML elements which should be animated when this Popup is triggered.</div>
+
+  <div class="normal bold smallMarginTop">collateralAnimationName</div>
+  <div class="normal">Optional. String containing the name of the animation for this Popup's collateral elements.</div>
+
+  <div class="normal bold smallMarginTop">collateralAnimationDuration</div>
+  <div class="normal">Optional. The number of iterations for the animation for this Popup's collateral elements.</div>
+
+  <div class="normal bold smallMarginTop">collateralAnimationIterations</div>
+  <div class="normal">Optional. The number of iterations for the animation for this Popup's collateral elements.</div>
+
+  <div class="normal bold smallMarginTop">collateralAnimationDelay</div>
+  <div class="normal">Optional. The delay for the animation for this Popup's collateral elements.</div>
+
+    <!-- Reqs for BootStrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
