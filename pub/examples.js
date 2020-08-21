@@ -1,22 +1,22 @@
 // select elements in DOM
 const base = document.querySelector("#base");
 
-const mouseover1 = document.querySelector("#mouseover1");
-const mouseover2 = document.querySelector("#mouseover2");
-const mouseover3 = document.querySelector("#mouseover3");
-const mouseover4 = document.querySelector("#mouseover4");
-const mouseover5 = document.querySelector("#mouseover5");
+const mouseoverGCW = document.querySelector("#mouseoverGCW");
+const mouseoverEvolutionary = document.querySelector("#mouseoverEvolutionary");
+const mouseoverSenescence = document.querySelector("#mouseoverSenescence");
+const mouseoverPleiotropy = document.querySelector("#mouseoverPleiotropy");
+const mouseoverGene = document.querySelector("#mouseoverGene");
 const enrolButton = document.querySelector("#enrolButton");
 
-const mouseover1Popup = new Popup(
+const mouseoverGCWPopup = new Popup(
   base,
   "box",
   "George Christopher Williams was an American evolutionary biologist.",
   "mouseover",
   "mouseleave"
 );
-mouseover1Popup.addAnimation("fadeIn", "0.5s", "1");
-mouseover1Popup.addOpenTrigger(mouseover1);
+mouseoverGCWPopup.addAnimation("fadeIn", "0.5s", "1");
+mouseoverGCWPopup.addOpenTrigger(mouseoverGCW);
 
 const mouseover2Popup = new Popup(
   base,
@@ -26,7 +26,7 @@ const mouseover2Popup = new Popup(
   "mouseleave"
 );
 mouseover2Popup.addAnimation("fadeIn", "0.5s", "1");
-mouseover2Popup.addOpenTrigger(mouseover2);
+mouseover2Popup.addOpenTrigger(mouseoverEvolutionary);
 
 const mouseover3Popup = new Popup(
   base,
@@ -36,7 +36,7 @@ const mouseover3Popup = new Popup(
   "mouseleave"
 );
 mouseover3Popup.addAnimation("fadeIn", "0.5s", "1");
-mouseover3Popup.addOpenTrigger(mouseover3);
+mouseover3Popup.addOpenTrigger(mouseoverSenescence);
 
 const mouseover4Popup = new Popup(
   base,
@@ -46,7 +46,7 @@ const mouseover4Popup = new Popup(
   "mouseleave"
 );
 mouseover4Popup.addAnimation("fadeIn", "0.5s", "1");
-mouseover4Popup.addOpenTrigger(mouseover4);
+mouseover4Popup.addOpenTrigger(mouseoverPleiotropy);
 
 const mouseover5Popup = new Popup(
   base,
@@ -56,7 +56,7 @@ const mouseover5Popup = new Popup(
   "mouseleave"
 );
 mouseover5Popup.addAnimation("fadeIn", "0.5s", "1");
-mouseover5Popup.addOpenTrigger(mouseover5);
+mouseover5Popup.addOpenTrigger(mouseoverGene);
 
 const importantPopup = new Popup(
   base,

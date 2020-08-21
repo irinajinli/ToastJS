@@ -113,6 +113,7 @@ div {
 
 .subtitle {
   font-size: 20px;
+  font-weight: bold;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -137,4 +138,15 @@ div {
   border-color: white;
   border-radius: 0px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+}
+
+.code {
+  font-size: 18px;
+  margin-top: 0px;
 }
