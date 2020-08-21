@@ -178,3 +178,18 @@ div {
   font-weight: normal;
   width: 70%;
 }
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.smallMarginTop {
+  margin-top: 1%;
+}
+
+.blue {
+  color: rgb(0, 123, 255);
+}

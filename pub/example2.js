@@ -11,8 +11,6 @@ const collateralPopup = new Popup(
   null,
   "wide"
 );
-// importantPopup.setParentElement(targetParent);
 collateralPopup.setCollateral([collateral]);
 collateralPopup.setCollateralAnimation("moveDown", "0s", "1");
-// collateralPopup.addAnimation("fadeIn", "1s", "1");
 collateralPopup.addOpenTrigger(infoHover);
