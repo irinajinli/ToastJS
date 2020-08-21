@@ -149,10 +149,15 @@
       const self = this;
       return function (event) {
         // find coordinates of event's target element
-        const x =
+        let x =
           window.scrollX + event.currentTarget.getBoundingClientRect().left;
-        const y =
-          window.scrollY + event.currentTarget.getBoundingClientRect().top + 50;
+        let y =
+          window.scrollY + event.currentTarget.getBoundingClientRect().top + 30;
+
+        // make sure popup doesn't appear off of screen
+        if (x + 0.2 * window.innerWidth > window.innerWidth) {
+          x = window.innerWidth - 0.25 * window.innerWidth;
+        }
 
         const popup = document.createElement("div");
 

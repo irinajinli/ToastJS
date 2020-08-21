@@ -13,6 +13,7 @@ div {
 .textPopup {
   z-index: 2;
   position: absolute;
+  width: 20%;
 }
 
 .boxPopup {
@@ -23,6 +24,7 @@ div {
   color: white;
   border-radius: 5px;
   padding: 20px;
+  width: 20%;
 }
 
 .greyOut {
@@ -76,3 +78,44 @@ div {
     left: 70vw;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* STYLES FOR EXAMPLES */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.normal {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.marginTop {
+  margin-top: 6%;
+}
+
+.smallMarginTop {
+  margin-top: 3%;
+}
+
+/* .mouseoverTarget {
+  color: #336699;
+  text-decoration: underline;
+} */
