@@ -6,94 +6,51 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- TODO: delete later -->
-    <!-- Jquery from a Google CDN. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <script defer type="text/javascript" src="toast.js"></script>
     <script defer type="text/javascript" src="examples.js"></script>
   </head>
-  <body>
-    <button
-      id="textButton"
-      style="position: absolute; top: 0vh; left: 25%;"
-      type="button"
-    >
-      Text Popup
-    </button>
-    <button
-      id="boxButton"
-      style="position: absolute; top: 0vh; left: 50%;"
-      type="button"
-    >
-      Box Popup
-    </button>
-    <button
-      id="closeableButton"
-      style="position: absolute; top: 0vh; left: 75%;"
-      type="button"
-    >
-      Closeable Popup
-    </button>
-    <button
-      id="timedButton"
-      style="position: absolute; top: 20vh; left: 25%;"
-      type="button"
-    >
-      Timed Popup
-    </button>
-    <button
-      id="hoverButton"
-      style="position: absolute; top: 20vh; left: 50%;"
-      type="button"
-    >
-      Hover Popup
-    </button>
-    <button
-      id="importantButton"
-      style="position: absolute; top: 20vh; left: 75%;"
-      type="button"
-    >
-      Important Popup
-    </button>
-    <button
-      id="cssButton"
-      style="position: absolute; top: 40vh; left: 25%;"
-      type="button"
-    >
-      Custom CSS
-    </button>
-    <button
-      id="animationButton"
-      style="position: absolute; top: 40vh; left: 50%;"
-      type="button"
-    >
-      Animated Popup
-    </button>
-    <button
-      id="soundButton"
-      style="position: absolute; top: 40vh; left: 75%;"
-      type="button"
-    >
-      Sound Popup
-    </button>
-    <button
-      id="customParentButton"
-      style="position: absolute; top: 40vh; left: 75%;"
-      type="button"
-    >
-      Custom Parent Popup
-    </button>
-    <div id="customParent" style="top: 80vh; left: 50vw; position: absolute;">
-      Custom parent is here
+  <body class="background">
+    <div class="title1 marginTop">Examples</div>
+    <div class="title2 smallMarginTop">Mouseover for Definitions</div>
+    <div class="subtitle smallMarginTop">
+      The following is an excerpt from a Wikipedia
+      <a href="https://en.wikipedia.org/wiki/Antagonistic_pleiotropy_hypothesis"
+        >article</a
+      >. Mouse over the underlined text to see a popup containing an excerpt
+      from the relevant article.
     </div>
-    <button
-      id="collateralButon"
-      style="position: absolute; top: 60vh; left: 25%;"
-      type="button"
-    >
-      Collateral Popup
-    </button>
+    <div class="normal smallMarginTop">
+      The antagonistic pleiotropy hypothesis was first proposed by
+      <a
+        href="https://en.wikipedia.org/wiki/George_C._Williams_(biologist)"
+        id="mouseover1"
+        >George C. Williams</a
+      >
+      in 1957 as an
+      <a href="https://en.wikipedia.org/wiki/Evolution" id="mouseover2"
+        >evolutionary</a
+      >
+      explanation for
+      <a href="https://en.wikipedia.org/wiki/Senescence" id="mouseover3"
+        >senescence</a
+      >.
+      <a href="https://en.wikipedia.org/wiki/Pleiotropy" id="mouseover4"
+        >Pleiotropy</a
+      >
+      is the phenomenon where one
+      <a href="https://en.wikipedia.org/wiki/Gene" id="mouseover5">gene</a>
+      controls for more than one phenotypic trait in an organism. Antagonistic
+      pleiotropy is when one gene controls for more than one trait, where at
+      least one of these traits is beneficial to the organism's fitness early on
+      in life and at least one is detrimental to the organism's fitness later on
+      due to a decline in the force of natural selection.
+    </div>
+    <!-- ====================== -->
+    <div class="title2 marginTop">Alert for Important Actions</div>
+    <div class="subtitle smallMarginTop">
+      <button id="enrolButton">Click to enroll in CSC309</button>
+    </div>
   </body>
 </html>

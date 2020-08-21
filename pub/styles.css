@@ -28,11 +28,16 @@ div {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.background {
+  z-index: 1;
+}
+
 .greyOut {
-  position: relative;
+  position: absolute;
   opacity: 80%;
   z-index: 2;
   background-color: #424949;
+  top: 0px;
   height: 100vh;
   width: 100%;
 }
@@ -90,22 +95,32 @@ div {
 }
 
 /* STYLES FOR EXAMPLES */
-.title {
+.title1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+
+.title2 {
   font-size: 24px;
   font-weight: bold;
-  margin-left: 6%;
-  margin-right: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
 }
 
 .subtitle {
   font-size: 20px;
-  margin-left: 6%;
-  margin-right: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .normal {
-  margin-left: 6%;
-  margin-right: 6%;
+  font-size: 18px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .marginTop {
@@ -113,7 +128,7 @@ div {
 }
 
 .smallMarginTop {
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
 .example1 {

@@ -1,136 +1,68 @@
-"use strict";
-
 // select elements in DOM
 const base = document.querySelector("#base");
-const button1 = document.querySelector("#button1");
-// const button2 = document.querySelector("#button2");
-const buttonStyledBox = document.querySelector("#buttonStyledBox");
-const buttonTranslucentPopup = document.querySelector(
-  "#buttonTranslucentPopup"
-);
-const textButton = document.querySelector("#textButton");
-const boxButton = document.querySelector("#boxButton");
-const closeableButton = document.querySelector("#closeableButton");
-const hoverButton = document.querySelector("#hoverButton");
-const timedButton = document.querySelector("#timedButton");
-const importantButton = document.querySelector("#importantButton");
-const cssButton = document.querySelector("#cssButton");
-const animationButton = document.querySelector("#animationButton");
-const soundButton = document.querySelector("#soundButton");
-const customParentButton = document.querySelector("#customParentButton");
-const collateralButon = document.querySelector("#collateralButon");
 
-// first, some basic built-in popups
-const textPopup = new Popup(
-  base,
-  "text",
-  "This is a default text popup.",
-  "click",
-  null
-);
-textPopup.addOpenTrigger(textButton);
+const mouseover1 = document.querySelector("#mouseover1");
+const mouseover2 = document.querySelector("#mouseover2");
+const mouseover3 = document.querySelector("#mouseover3");
+const mouseover4 = document.querySelector("#mouseover4");
+const mouseover5 = document.querySelector("#mouseover5");
+const enrolButton = document.querySelector("#enrolButton");
 
-const boxPopup = new Popup(
+const mouseover1Popup = new Popup(
   base,
   "box",
-  "This is a default box popup.",
-  "click",
-  null
-);
-boxPopup.addOpenTrigger(boxButton);
-
-// popup which closes when clicked twice
-const closeablePopup = new Popup(
-  base,
-  "box",
-  "This is a default close-button popup.",
-  "click",
-  "close button"
-);
-closeablePopup.addOpenTrigger(closeableButton);
-
-const timedPopup = new Popup(
-  base,
-  "box",
-  "This is a timed popup.",
-  "click",
-  "time",
-  2000
-);
-timedPopup.addOpenTrigger(timedButton);
-
-// hover popup
-const hoverPopup = new Popup(
-  base,
-  "box",
-  "This is a hover popup.",
+  "George Christopher Williams was an American evolutionary biologist.",
   "mouseover",
   "mouseleave"
 );
-hoverPopup.addOpenTrigger(hoverButton);
+mouseover1Popup.addAnimation("fadeIn", "0.5s", "1");
+mouseover1Popup.addOpenTrigger(mouseover1);
+
+const mouseover2Popup = new Popup(
+  base,
+  "box",
+  "Evolution is change in the heritable characteristics of biological populations over successive generations.",
+  "mouseover",
+  "mouseleave"
+);
+mouseover2Popup.addAnimation("fadeIn", "0.5s", "1");
+mouseover2Popup.addOpenTrigger(mouseover2);
+
+const mouseover3Popup = new Popup(
+  base,
+  "box",
+  "Senescence or biological aging is the gradual deterioration of functional characteristics.",
+  "mouseover",
+  "mouseleave"
+);
+mouseover3Popup.addAnimation("fadeIn", "0.5s", "1");
+mouseover3Popup.addOpenTrigger(mouseover3);
+
+const mouseover4Popup = new Popup(
+  base,
+  "box",
+  "Pleiotropy occurs when one gene influences two or more seemingly unrelated phenotypic traits.",
+  "mouseover",
+  "mouseleave"
+);
+mouseover4Popup.addAnimation("fadeIn", "0.5s", "1");
+mouseover4Popup.addOpenTrigger(mouseover4);
+
+const mouseover5Popup = new Popup(
+  base,
+  "box",
+  "In biology, a gene is a sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein.",
+  "mouseover",
+  "mouseleave"
+);
+mouseover5Popup.addAnimation("fadeIn", "0.5s", "1");
+mouseover5Popup.addOpenTrigger(mouseover5);
 
 const importantPopup = new Popup(
   base,
   "important",
-  "This is an important popup.",
+  "You have successfully been enrolled in CSC309!",
   "click",
   "close button"
 );
-importantPopup.addOpenTrigger(importantButton);
-
-const cssPopup = new Popup(
-  base,
-  "box",
-  "This is a custom-styled popup.",
-  "mouseover",
-  "mouseleave",
-  "customCss"
-);
-cssPopup.addOpenTrigger(cssButton);
-
-const animationPopup = new Popup(
-  base,
-  "box",
-  "This is an animated popup.",
-  "click",
-  "close button"
-);
-animationPopup.addAnimation("toTop", "1s", "1");
-animationPopup.addOpenTrigger(animationButton);
-
-const soundPopup = new Popup(
-  base,
-  "box",
-  "This is a popup with sound!",
-  "click",
-  "close button"
-);
-soundPopup.addOpenTrigger(soundButton);
-soundPopup.addSound("./resources/botw_get.mp3");
-
-const customParentPopup = new Popup(
-  base,
-  "text",
-  "This popup has a custom parent.",
-  "click",
-  "close button"
-);
-const customParent = document.querySelector("#customParent");
-customParentPopup.setParentElement(customParent);
-customParentPopup.addOpenTrigger(customParentButton);
-
-const collateralPopup = new Popup(
-  base,
-  "text",
-  "This popup affects other elements.",
-  "click",
-  "close button",
-  "left"
-);
-collateralPopup.addAnimation("toRight", "1s", "1");
-const collateralElements = [document.querySelector("#customParent")];
-collateralPopup.setCollateral(collateralElements);
-console.log(collateralPopup);
-collateralPopup.setCollateralAnimation("toRight", "1s", "1");
-console.log(collateralPopup);
-collateralPopup.addOpenTrigger(collateralButon);
+importantPopup.addOpenTrigger(enrolButton);
