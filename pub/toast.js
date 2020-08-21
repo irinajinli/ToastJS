@@ -23,22 +23,25 @@
       this.animationName = null;
       this.animationDuration = null;
       this.animationIterations = null;
+      this.animationDelay = null;
       this.soundPath = null; // to play sound effect when popup appears
       this.parentElement = null; // if null, popup will be appended to event target's parent
       this.collateral = null; // an array of other elements to move when the popup appears
       this.collateralAnimationName = null; // how to animate the other affected elements
       this.collateralAnimationDuration = null;
       this.collateralAnimationIterations = null;
+      this.collateralAnimationDelay = null;
     }
 
     setCollateral(arrayOfCollateralElements) {
       this.collateral = arrayOfCollateralElements;
     }
 
-    setCollateralAnimation(name, duration, iterations) {
+    setCollateralAnimation(name, duration, iterations, delay) {
       this.collateralAnimationName = name;
       this.collateralAnimationDuration = duration;
       this.collateralAnimationIterations = iterations;
+      this.collateralAnimationDelay = delay;
     }
 
     animateCollateral() {
@@ -48,12 +51,8 @@
         currElement.style.animationName = this.collateralAnimationName;
         currElement.style.animationDuration = this.collateralAnimationDuration;
         currElement.style.animationIterations = this.collateralAnimationIterations;
+        currElement.style.animationDelay = this.collateralAnimationDelay;
         currElement.style.animationFillMode = "forwards";
-        console.log(
-          this.collateralAnimationName,
-          this.collateralAnimationDuration,
-          this.collateralAnimationIterations
-        );
       }
     }
 
@@ -206,6 +205,7 @@
         } else if (self.closeTrigger === "time") {
           setTimeout(function () {
             popup.remove();
+            callback();
           }, self.ms);
         }
 
@@ -273,11 +273,12 @@
       };
     }
 
-    addAnimation(name, duration, iterations) {
+    addAnimation(name, duration, iterations, delay) {
       const self = this;
       self.animationName = name;
       self.animationDuration = duration;
       self.animationIterations = iterations;
+      self.animationDelay = delay;
     }
 
     animate(popup) {
@@ -285,6 +286,7 @@
       popup.style.animationName = self.animationName;
       popup.style.animationDuration = self.animationDuration;
       popup.style.animationIterations = self.animationIterations;
+      popup.style.animationDelay = self.animationDelay;
       popup.style.animationFillMode = "forwards";
     }
 

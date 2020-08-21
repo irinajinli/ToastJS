@@ -38,7 +38,7 @@ div {
   z-index: 2;
   background-color: #424949;
   top: 0px;
-  height: 150%;
+  height: 200%;
   width: 100%;
 }
 
@@ -94,6 +94,15 @@ div {
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* STYLES FOR EXAMPLES */
 .title1 {
   font-size: 28px;
@@ -124,12 +133,12 @@ div {
   margin-right: 15%;
 }
 
-.marginTop {
-  margin-top: 6%;
-}
-
 .smallMarginTop {
   margin-top: 1%;
+}
+
+.marginTop {
+  margin-top: 6%;
 }
 
 .example1 {
