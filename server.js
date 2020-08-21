@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(__dirname + "/pub"));
 
 app.get("/", function (req, res) {
-  res.send("Welcome to ToastJS.");
+  res.sendFile("landing.html");
 });
 
 const port = process.env.PORT || 5000;

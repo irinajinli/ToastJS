@@ -100,6 +100,10 @@ xmp {
   margin-bottom: 6%;
 }
 
+.noMarginBottom {
+  margin-bottom: 0%;
+}
+
 .marginRight {
   margin-right: 0.5%;
 }
@@ -117,6 +121,12 @@ xmp {
 }
 
 .image {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+
+.landingImage {
   margin-left: 35%;
   margin-right: 35%;
   width: 30%;
@@ -143,4 +153,9 @@ xmp {
 
 .centreText {
   text-align: center;
+}
+
+.rightText {
+  margin-right: 15%;
+  text-align: right;
 }
