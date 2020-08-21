@@ -1,12 +1,12 @@
 // select elements in DOM
 const base = document.querySelector("#base");
-const cartButton = document.querySelector("#cartButton");
+const enrolButton = document.querySelector("#enrolButton");
 
-const cartPopup = new Popup(
+const importantPopup = new Popup(
   base,
-  "box",
-  "This item has been added to your cart.",
-  "click"
+  "important",
+  "You have successfully been enrolled in CSC309!",
+  "click",
+  "close button"
 );
-cartPopup.addAnimation("fadeOut", "2s", "1", "0.5s");
-cartPopup.addOpenTrigger(cartButton);
+importantPopup.addOpenTrigger(enrolButton);

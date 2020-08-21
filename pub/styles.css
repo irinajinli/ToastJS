@@ -85,6 +85,15 @@ div {
   }
 }
 
+@keyframes moveDown {
+  from {
+  }
+  to {
+    position: absolute;
+    top: 500px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -158,4 +167,14 @@ div {
 .code {
   font-size: 18px;
   margin-top: 0px;
+}
+
+.blue {
+  color: rgb(0, 123, 255);
+}
+
+.wide {
+  font-size: 18px;
+  font-weight: normal;
+  width: 70%;
 }
