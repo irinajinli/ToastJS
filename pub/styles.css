@@ -38,7 +38,7 @@ div {
   z-index: 2;
   background-color: #424949;
   top: 0px;
-  height: 100vh;
+  height: 150%;
   width: 100%;
 }
 
@@ -98,30 +98,30 @@ div {
 .title1 {
   font-size: 28px;
   font-weight: bold;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-bottom: 2%;
 }
 
 .title2 {
   font-size: 24px;
   font-weight: bold;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-bottom: 2%;
 }
 
 .subtitle {
   font-size: 20px;
   font-weight: bold;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .normal {
   font-size: 18px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .marginTop {
@@ -141,9 +141,9 @@ div {
 }
 
 .image {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
 }
 
 .code {

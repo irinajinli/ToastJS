@@ -1,12 +1,10 @@
 // select elements in DOM
 const base = document.querySelector("#base");
-
 const mouseoverGCW = document.querySelector("#mouseoverGCW");
 const mouseoverEvolutionary = document.querySelector("#mouseoverEvolutionary");
 const mouseoverSenescence = document.querySelector("#mouseoverSenescence");
 const mouseoverPleiotropy = document.querySelector("#mouseoverPleiotropy");
 const mouseoverGene = document.querySelector("#mouseoverGene");
-const enrolButton = document.querySelector("#enrolButton");
 
 const mouseoverGCWPopup = new Popup(
   base,
@@ -57,12 +55,3 @@ const mouseover5Popup = new Popup(
 );
 mouseover5Popup.addAnimation("fadeIn", "0.5s", "1");
 mouseover5Popup.addOpenTrigger(mouseoverGene);
-
-const importantPopup = new Popup(
-  base,
-  "important",
-  "You have successfully been enrolled in CSC309!",
-  "click",
-  "close button"
-);
-importantPopup.addOpenTrigger(enrolButton);
