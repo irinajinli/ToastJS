@@ -17,6 +17,10 @@
       crossorigin="anonymous"
     />
 
+    <!-- Prism -->
+    <link href="prism.css" rel="stylesheet" />
+    <script src="prism.js"></script>
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="docstyles.css" />
 
@@ -29,14 +33,15 @@
       <a href="example2.html" class="marginLeft">Next Example</a>
     </div>
     <div class="title1 marginTop">Example 1</div>
-    <div class="title2 smallMarginTop">Mouseover for Definitions</div>
-    <div class="normal smallMarginTop">
+    <div class="title2">Mouseover for Definitions</div>
+    <div class="normal">
       The following is an excerpt from a Wikipedia
       <a href="https://en.wikipedia.org/wiki/Antagonistic_pleiotropy_hypothesis"
         >article</a
       >. Mouse over the blue text to see a popup containing an excerpt from the
       relevant article.
     </div>
+    <div class="title2 smallMarginTop">Antagonistic pleiotropy hypothesis</div>
     <div class="normal smallMarginTop">
       The antagonistic pleiotropy hypothesis was first proposed by
       <a
@@ -69,13 +74,50 @@
       in life and at least one is detrimental to the organism's fitness later on
       due to a decline in the force of natural selection.
     </div>
+
     <div class="subtitle smallMarginTop">Code</div>
     <div class="subtitle smallMarginTop">JS (for one popup)</div>
-    <img src="./resources/mouseoverDefJS.png" class="image" />
+    <div class="normal">
+      <pre><code class="language-js">
+      const mouseoverGCWPopup = new Popup(
+        base,
+        "box",
+        "George Christopher Williams was an American evolutionary biologist.",
+        "mouseover",
+        "mouseleave"
+      );
+      mouseoverGCWPopup.addAnimation("fadeIn", "0.5s", "1");
+      mouseoverGCWPopup.addOpenTrigger(mouseoverGCW);</code></pre>
+    </div>
+
     <div class="subtitle smallMarginTop">HTML</div>
-    <img src="./resources/mouseoverDefHTML.png" class="image" />
+    <div class="normal">
+      <script type="text/plain" class="language-markup">
+        <div class="normal smallMarginTop">
+          The antagonistic pleiotropy hypothesis was first proposed by
+          <a
+            href="https://en.wikipedia.org/wiki/George_C._Williams_(biologist)"
+            id="mouseoverGCW"
+            >George C. Williams
+            </a>
+          in 1957...
+        </div>
+      </script>
+    </div>
+
     <div class="subtitle smallMarginTop">CSS</div>
-    <img src="./resources/mouseoverDefCSS.png" class="image" />
+    <div class="normal">
+      <pre><code class="language-css">
+        .normal {
+          font-size: 18px;
+          margin-left: 15%;
+          margin-right: 15%;
+        }
+        
+        .smallMarginTop {
+          margin-top: 1%;
+        }</code></pre>
+    </div>
 
     <!-- Reqs for BootStrap -->
     <script

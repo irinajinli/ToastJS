@@ -17,6 +17,10 @@
       crossorigin="anonymous"
     />
 
+    <!-- Prism -->
+    <link href="prism.css" rel="stylesheet" />
+    <script src="prism.js"></script>
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="docstyles.css" />
 
@@ -33,13 +37,45 @@
     <div class="subtitle smallMarginTop">
       <button id="enrolButton">Click to enroll in CSC309</button>
     </div>
+
     <div class="subtitle smallMarginTop">Code</div>
-    <div class="subtitle smallMarginTop">JS (for one popup)</div>
-    <img src="./resources/importantJS.png" class="image" />
+    <div class="subtitle smallMarginTop">JS</div>
+    <div class="normal">
+      <pre><code class="language-js">
+      const mouseoverGCWPopup = new Popup(
+        base,
+        "box",
+        "George Christopher Williams was an American evolutionary biologist.",
+        "mouseover",
+        "mouseleave"
+      );
+      mouseoverGCWPopup.addAnimation("fadeIn", "0.5s", "1");
+      mouseoverGCWPopup.addOpenTrigger(mouseoverGCW);</code></pre>
+    </div>
+
     <div class="subtitle smallMarginTop">HTML</div>
-    <img src="./resources/importantHTML.png" class="image" />
+    <div class="normal">
+      <script type="text/plain" class="language-markup">
+        <div class="subtitle smallMarginTop">
+          <button id="enrolButton">Click to enroll in CSC309</button>
+        </div>
+      </script>
+    </div>
+
     <div class="subtitle smallMarginTop">CSS</div>
-    <img src="./resources/importantCSS.png" class="image" />
+    <div class="normal">
+      <pre><code class="language-css">
+        .subtitle {
+          font-size: 20px;
+          font-weight: bold;
+          margin-left: 15%;
+          margin-right: 15%;
+        }
+        
+        .smallMarginTop {
+          margin-top: 1%;
+        }</code></pre>
+    </div>
 
     <!-- Reqs for BootStrap -->
     <script

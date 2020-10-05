@@ -14,6 +14,10 @@
       crossorigin="anonymous"
     />
 
+    <!-- Prism -->
+    <link href="prism.css" rel="stylesheet" />
+    <script src="prism.js"></script>
+
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="docstyles.css" />
 
@@ -25,19 +29,62 @@
     <a href="landing.html">Back to Home</a>
     <a href="example3.html" class="marginLeft">Next Example</a>
   </div>
+  
   <div class="title1 marginTop">Example 2</div>
   <div class="title2 smallMarginTop">Popup Affecting Other Elements</div>
     <div class="subtitle smallMarginTop">
       <div class="blue" id="infoHover">Hover for more information</div>
     </div>
+
     <div id="collateral">
       <div class="subtitle smallMarginTop">Code</div>
-      <div class="subtitle smallMarginTop">JS (for one popup)</div>
-      <img src="./resources/collateralJS.png" class="image" />
+      <div class="subtitle smallMarginTop">JS</div>
+      <div class="normal">
+        <pre><code class="language-js">
+        const mouseoverGCWPopup = new Popup(
+          base,
+          "box",
+          "George Christopher Williams was an American evolutionary biologist.",
+          "mouseover",
+          "mouseleave"
+        );
+        mouseoverGCWPopup.addAnimation("fadeIn", "0.5s", "1");
+        mouseoverGCWPopup.addOpenTrigger(mouseoverGCW);</code></pre>
+      </div>
+
       <div class="subtitle smallMarginTop">HTML</div>
-      <img src="./resources/collateralHTML.png" class="image" />
+      <div class="normal">
+        <script type="text/plain" class="language-markup">
+          <div class="subtitle smallMarginTop">
+            <div class="blue" id="infoHover">Hover for more information</div>
+          </div>
+        </script>
+      </div>
+      
       <div class="subtitle smallMarginTop">CSS</div>
-      <img src="./resources/collateralCSS.png" class="image" />
+      <div class="normal">
+        <pre><code class="language-css">
+          .blue {
+            color: rgb(0, 123, 255);
+          }
+          
+          .wide {
+            font-size: 18px;
+            font-weight: normal;
+            width: 70%;
+          }
+          
+          .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 15%;
+            margin-right: 15%;
+          }
+          
+          .smallMarginTop {
+            margin-top: 1%;
+          }</code></pre>
+      </div>
     </div>
     
 
