@@ -1,5 +1,5 @@
 # ToastJS
-This is a library for creating popups.
+This is a library for creating popups created by Jean Li.
 
 ## Link to App Landing Page
 https://floating-thicket-81506.herokuapp.com/
