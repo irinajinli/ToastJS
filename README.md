@@ -1,5 +1,5 @@
 # ToastJS
-Popup Library
+This is a library for creating popups.
 
 ## Link to App Landing Page
 https://floating-thicket-81506.herokuapp.com/
