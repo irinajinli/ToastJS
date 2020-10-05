@@ -1,4 +1,5 @@
-# js-library-lijean
+# ToastJS
+Popup Library
 
 ## Link to App Landing Page
 https://floating-thicket-81506.herokuapp.com/
